@@ -4,129 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>메타 · 구글 광고 영업 케이스 플레이북 | 링크프라이스 SEM 신입교육</title>
-<meta name="description" content="메타·구글 광고 영업 실전 스크립트, 핵심 지표 용어, 권한 부여 프로세스를 담은 SEM 신입 세일즈 교육 플레이북">
+<meta name="description" content="메타·구글 광고 영업 실전 스크립트, 핵심 지표 이해, 권한 부여 프로세스를 담은 SEM 신입 세일즈 교육 제안서형 슬라이드">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">☰</button>
-<div class="backdrop" id="backdrop"></div>
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-brand">SEM 세일즈 플레이북</span>
+    <span class="topbar-chapter" id="tbChapter"><span class="dot" style="background:#4C5FFF"></span>Cover</span>
+  </div>
+  <div class="topbar-right">
+    <span class="topbar-count" id="tbCount">01 / 01</span>
+    <button class="tb-btn" id="btnOverview" title="전체 슬라이드 보기 (G)">▦</button>
+    <button class="tb-btn" id="btnFullscreen" title="큰 화면으로 보기 (F)">⤢</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
-<div class="shell">
+<!-- ============ NAV ARROWS ============ -->
+<button class="nav-arrow prev" id="prevBtn" title="이전 (←)">‹</button>
+<button class="nav-arrow next" id="nextBtn" title="다음 (→)">›</button>
 
-  <!-- ============ SIDEBAR ============ -->
-  <nav class="sidebar" id="sidebar">
-    <div class="brand">
-      <span class="tag">Online Marketing · SEM 신입교육</span>
-      <span class="name">세일즈 케이스 플레이북</span>
-    </div>
+<!-- ============ KEYBOARD HINT ============ -->
+<div class="kbd-hint" id="kbdHint">
+  <span><kbd>←</kbd><kbd>→</kbd> 슬라이드 이동</span>
+  <span><kbd>F</kbd> 큰 화면</span>
+  <span><kbd>G</kbd> 전체 보기</span>
+</div>
 
-    <div class="nav-group">
-      <div class="nav-group-label"><span class="nav-dot" style="background:#4C5FFF"></span>Chapter 01 · 메타 영업</div>
-      <ul class="nav-links">
-        <li><a href="#meta-content">콘텐츠 영업</a></li>
-        <li><a href="#meta-content-script">스크립트 뱅크</a></li>
-        <li><a href="#meta-collab">협력광고 확장</a></li>
-        <li><a href="#meta-collab-script">협력광고 스크립트</a></li>
-        <li><a href="#meta-permission">권한 부여 프로세스</a></li>
-      </ul>
-    </div>
+<!-- ============ DECK ============ -->
+<div class="deck" id="deck">
 
-    <div class="nav-group">
-      <div class="nav-group-label"><span class="nav-dot" style="background:#0E9488"></span>Chapter 02 · 핵심 지표</div>
-      <ul class="nav-links">
-        <li><a href="#metric-basic">도달 · 노출 지표</a></li>
-        <li><a href="#metric-conv">전환 지표</a></li>
-        <li><a href="#metric-flow">지표 관계도</a></li>
-        <li><a href="#metric-quiz">미니 계산 퀴즈</a></li>
-      </ul>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-group-label"><span class="nav-dot" style="background:#8B5CF6"></span>Chapter 03 · 케이스 뱅크</div>
-      <ul class="nav-links">
-        <li><a href="#bank-cases">추가 실습 케이스 6종</a></li>
-      </ul>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-group-label"><span class="nav-dot" style="background:#F2723A"></span>Chapter 04 · 구글 영업</div>
-      <ul class="nav-links">
-        <li><a href="#google-strength">구글만의 강점</a></li>
-        <li><a href="#google-aeo">AEO 영업</a></li>
-        <li><a href="#google-pmax">P.MAX 영업</a></li>
-        <li><a href="#google-shopping">쇼핑 무료 입점</a></li>
-        <li><a href="#google-shopping-script">쇼핑 영업 스크립트</a></li>
-        <li><a href="#google-permission">권한 부여 프로세스</a></li>
-      </ul>
-    </div>
-
-    <div class="nav-group">
-      <ul class="nav-links" style="border-left:none;padding-left:0;">
-        <li><a href="#qa">Q&amp;A · Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-footer">
-      강사 안희성 · 2026.08 · v2.0<br>
-      온라인 마케팅 교육 · 메타 / 구글 광고
-    </div>
-  </nav>
-
-  <!-- ============ MAIN ============ -->
-  <main>
-
-    <header class="hero" id="top">
-      <span class="eyebrow">Online Marketing · SEM 신입교육</span>
+  <!-- 00 COVER -->
+  <section class="slide cover-slide dark active" data-chapter="Cover" data-color="#4C5FFF" data-title="표지">
+    <div class="slide-inner">
+      <span class="eyebrow">Online Marketing · SEM 신입교육 · 제안형 세일즈 교육자료</span>
       <h1>메타 · 구글 광고<br>영업 케이스 플레이북</h1>
-      <p class="hero-desc">첫 미팅에서 바로 써먹는 콜드 콜 스크립트, 헷갈리기 쉬운 핵심 지표 용어, 그리고 실제 계정 권한 부여 프로세스까지 — 신입 세일즈를 위한 실전 교육 자료입니다.</p>
+      <p class="hero-desc">첫 미팅에서 바로 써먹는 콜드 콜 스크립트, 헷갈리기 쉬운 핵심 지표, 실제 계정 권한 부여 프로세스까지 담은 신입 세일즈 실전 교육 자료입니다.</p>
       <div class="hero-meta">
         <div><span>강사</span><strong>안희성</strong></div>
         <div><span>대상</span><strong>SEM 신입 세일즈</strong></div>
-        <div><span>버전</span><strong>v2.0 · 2026.08</strong></div>
+        <div><span>버전</span><strong>v3.0 · 2026.08</strong></div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- ============ CH1. 메타 : 콘텐츠 영업 ============ -->
-    <section class="section" id="meta-content">
+  <!-- 01 AGENDA -->
+  <section class="slide" data-chapter="목차" data-color="#12142B" data-title="전체 구성">
+    <div class="slide-inner">
+      <span class="eyebrow" style="background:var(--bg-alt-2);color:var(--muted);">Overview</span>
+      <h2>이 교육에서 다루는 4가지</h2>
+      <p class="section-lead">화살표 키로 슬라이드를 넘기며 순서대로 학습하거나, 상단 ▦ 버튼으로 원하는 챕터로 바로 이동할 수 있습니다.</p>
+      <div class="agenda-grid">
+        <div class="agenda-card">
+          <div class="num" style="color:var(--meta);">01</div>
+          <h4>메타 영업 케이스</h4>
+          <ul><li>콘텐츠 영업 &amp; 스크립트</li><li>협력광고 확장 &amp; 스크립트</li><li>권한 부여 프로세스</li></ul>
+        </div>
+        <div class="agenda-card">
+          <div class="num" style="color:var(--metric);">02</div>
+          <h4>핵심 지표 이해</h4>
+          <ul><li>도달·노출·클릭·전환 지표</li><li>지표 관계도 &amp; 문제 진단법</li><li>미니 계산 퀴즈 3종</li></ul>
+        </div>
+        <div class="agenda-card">
+          <div class="num" style="color:var(--bank);">03</div>
+          <h4>실습 케이스 뱅크</h4>
+          <ul><li>콜드 아웃리치 / 경쟁 전환</li><li>데이터 컨설팅 / 업셀</li><li>반론처리 롤플레이</li></ul>
+        </div>
+        <div class="agenda-card">
+          <div class="num" style="color:var(--google);">04</div>
+          <h4>구글 영업 케이스</h4>
+          <ul><li>구글의 강점 · AEO · P.MAX</li><li>쇼핑 무료 입점 &amp; 스크립트</li><li>권한 부여 프로세스</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 01 : META ===================== -->
+  <section class="slide dark divider-slide" data-chapter="메타 영업" data-color="#4C5FFF" data-title="Ch.01 메타 영업">
+    <div class="slide-inner">
+      <div class="divider-num">01</div>
+      <h1>메타 영업 케이스</h1>
+      <p class="hero-desc" style="margin:0;">메타 광고 라이브러리를 활용한 콘텐츠 영업부터 협력광고 확장, 계정 권한 부여까지</p>
+      <div class="divider-topics">
+        <span>콘텐츠 영업</span><span>협력광고 확장</span><span>권한 부여 프로세스</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-chapter="메타 영업" data-color="#4C5FFF" data-title="콘텐츠 영업 - 발굴 프로세스">
+    <div class="slide-inner">
       <span class="chapter-badge meta">CHAPTER 01 · 메타 영업</span>
       <h2>콘텐츠 영업 — 라이브러리로 잠재고객 발굴하기</h2>
-      <p class="section-lead">메타 광고 라이브러리에서 실제 운영 중인 광고를 먼저 확인하고, 소재의 빈틈을 근거로 접근하는 방식입니다. 아무 정보 없이 연락하는 것보다 전환율이 훨씬 높습니다.</p>
-
+      <p class="section-lead">메타 광고 라이브러리에서 실제 운영 중인 광고를 먼저 확인하고, 소재의 빈틈을 근거로 접근합니다. 아무 정보 없이 연락하는 것보다 응답률이 훨씬 높습니다.</p>
       <div class="steps">
-        <div class="step">
-          <div class="step-num" style="background:var(--meta-soft);color:var(--meta)">1</div>
-          <h4>STEP 1 · 광고관리자 접속하기</h4>
-          <p>메타 광고 라이브러리에 접속해 <b>모든 광고</b>를 체크하고 원하는 키워드를 검색합니다.</p>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">1</div>
+          <h4>광고관리자 접속하기</h4>
+          <p><b>모든 광고</b>를 체크하고 원하는 키워드를 검색합니다.</p>
           <a class="link" href="https://www.facebook.com/ads/library" target="_blank" rel="noopener">facebook.com/ads/library</a>
         </div>
-        <div class="step">
-          <div class="step-num" style="background:var(--meta-soft);color:var(--meta)">2</div>
-          <h4>STEP 2 · 업체 리스트 확보</h4>
-          <p>브랜드명 · 인스타그램 계정명 · 카테고리명으로 검색 후 <b>“업체 더 알아보기”</b>를 클릭합니다.</p>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">2</div>
+          <h4>업체 리스트 확보</h4>
+          <p>브랜드명 · 인스타 계정명 · 카테고리명으로 검색 후 “업체 더 알아보기”를 클릭합니다.</p>
         </div>
-        <div class="step">
-          <div class="step-num" style="background:var(--meta-soft);color:var(--meta)">3</div>
-          <h4>STEP 3 · 사업자 확인</h4>
-          <p>연결된 사이트에서 타 매체와 동일하게 사업자 번호를 조회하고, 업체별로 맞는 방식으로 영업을 진행합니다.</p>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">3</div>
+          <h4>사업자 확인</h4>
+          <p>사업자 번호를 조회하고, 업체별로 맞는 방식으로 영업을 진행합니다.</p>
         </div>
       </div>
+      <div class="callout good"><b>교육 포인트.</b> 소재 개수 · 게재 기간 · 포맷을 스크린샷으로 캡처해두면, 첫 연락에서 "그냥 영업 전화"가 아니라 "우리를 지켜본 전문가"로 인식됩니다.</div>
+    </div>
+  </section>
 
-      <div class="callout good">
-        <b>교육 포인트.</b> 라이브러리에서 확인한 사실(소재 개수, 게재 기간, 포맷)을 스크린샷으로 캡처해두면, 첫 연락에서 "그냥 영업 전화"가 아니라 "우리를 지켜본 전문가"로 인식됩니다.
-      </div>
-    </section>
-
-    <!-- ============ 스크립트 뱅크 1 ============ -->
-    <section class="section" id="meta-content-script">
+  <section class="slide" data-chapter="메타 영업" data-color="#4C5FFF" data-title="콘텐츠 영업 스크립트 뱅크">
+    <div class="slide-inner">
       <span class="chapter-badge meta">CHAPTER 01 · 메타 영업</span>
       <h2>콘텐츠 영업 스크립트 뱅크</h2>
-      <p class="section-lead">소재의 약점을 짚어 무료 제작이라는 차별점으로 연결하는 두 가지 실전 예시입니다.</p>
-
-      <h3 class="subhead">예시 1 · 소재 차별점이 없는 광고주</h3>
-      <div class="script-card">
-        <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
-        <div class="script-body">안녕하세요! 링크프라이스 000 대리입니다.
+      <div class="split">
+        <div>
+          <h3 class="subhead">예시 1 · 소재 차별점이 없는 광고주</h3>
+          <div class="script-card">
+            <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
+            <div class="script-body">안녕하세요! 링크프라이스 000 대리입니다.
 
 주로 ~ 컨셉의 소재들 활용 중이시던데
 소재들은 대행사에서 제작해 주고 계신 걸까요?
@@ -137,130 +138,125 @@ A/B테스트 없이 동일하게 진행되고 있는 것 같아서요.
 
 일반적인 대행사들은 일주일에 고작 10개를 돈 내고 제작해 주는데
 저희는 광고주분들 대상으로는 <b>무료로 제작</b>해드립니다.</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="subhead">예시 2 · 인플루언서 섭외 비용 부담이 큰 뷰티 업종</h3>
+          <div class="script-card">
+            <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
+            <div class="script-body">안녕하세요! 링크프라이스 000 대리입니다.
+
+사실 요새 뷰티 업종은 인플루언서나 모델 섭외 소재가
+필수 잖아요. 한번 섭외할 때 최소 몇 십만원에서
+몇 백만원까지 들어가기도 하는데 <b>AI 모델</b>은 안 써 보셨을까요?
+
+저희 쪽에서는 AI 적극 활용해서 실제 사람과 같은
+소재들도 무료로 제작 도와드리고 있거든요.
+
+이미지 한정 무료지만 성과 내는 업체가 많고,
+제작 개수 제한이 없어 많은 양을 테스트 가능합니다.</div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <h3 class="subhead">예시 2 · 인플루언서 섭외 비용이 부담스러운 뷰티 업종</h3>
-      <div class="script-card">
-        <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
-        <div class="script-body">안녕하세요! 링크프라이스 000 대리입니다.
-
-사실 요새 뷰티 업종은 인플루언서나 모델 섭외 소재가 필수 잖아요
-한번 섭외할 때 최소 몇 십만원에서 몇 백만원까지 들어가기도 하는데
-<b>AI 모델</b>은 안 써 보셨을까요?
-
-저희 쪽에서는 AI 적극 활용해서 실제 사람과 같은 소재들도 만들고 있는데
-이게 또 저희 광고주분들 대상으로는 무료로 제작 도와드리고 있거든요.
-
-물론 이미지 한정해서 무료기는 한데 그럼에도 성과 내고 있는 업체들이 많고
-저희는 소재 제작 개수 제한이 없다 보니까 많은 양을 테스트 가능하십니다.</div>
-      </div>
-    </section>
-
-    <!-- ============ CH1. 협력광고 확장 ============ -->
-    <section class="section" id="meta-collab">
+  <section class="slide" data-chapter="메타 영업" data-color="#4C5FFF" data-title="협력광고 확장">
+    <div class="slide-inner">
       <span class="chapter-badge meta">CHAPTER 01 · 메타 영업</span>
       <h2>협력광고 확장</h2>
       <p class="section-lead">매출 성장에 정체기가 온 이커머스 업체에게, 기존 입점 채널의 고객 모수를 메타에서도 그대로 활용하도록 제안하는 방식입니다.</p>
-
       <div class="chip-row">
-        <span class="chip">네이버 브랜드스토어</span>
-        <span class="chip">올리브영</span>
-        <span class="chip">11번가</span>
-        <span class="chip">에이블리</span>
-        <span class="chip">무신사</span>
+        <span class="chip">네이버 브랜드스토어</span><span class="chip">올리브영</span><span class="chip">11번가</span><span class="chip">에이블리</span><span class="chip">무신사</span>
       </div>
+      <div class="callout good" style="margin-top:20px;"><b>왜 통하는가.</b> 입점 채널 안에서만 광고하면 같은 매대의 경쟁사와 계속 부딪힙니다. 협력광고는 "이미 확보한 고객 모수를 메타에서 한 번 더 태운다"는 프레임으로, 기존 채널을 대체하는 게 아니라 확장한다는 점을 강조해야 합니다.</div>
+    </div>
+  </section>
 
-      <div class="callout good" style="margin-top:22px;">
-        <b>왜 통하는가.</b> 입점 채널 안에서만 광고하면 같은 매대의 경쟁사와 계속 부딪힙니다. 협력광고는 "이미 확보한 고객 모수를 메타에서 한 번 더 태운다"는 프레임으로, 기존 채널을 대체하는 게 아니라 확장한다는 점을 강조해야 합니다.
-      </div>
-    </section>
-
-    <!-- ============ 협력광고 스크립트 ============ -->
-    <section class="section" id="meta-collab-script">
+  <section class="slide" data-chapter="메타 영업" data-color="#4C5FFF" data-title="협력광고 스크립트 뱅크">
+    <div class="slide-inner">
       <span class="chapter-badge meta">CHAPTER 01 · 메타 영업</span>
       <h2>협력광고 스크립트 뱅크</h2>
+      <div class="split">
+        <div>
+          <h3 class="subhead">예시 1 · 네이버 브랜드스토어 입점 업체</h3>
+          <div class="script-card">
+            <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
+            <div class="script-body">안녕하세요 링크프라이스 000 대리입니다.
+지금 네이버 브랜드스토어로 확인되시는데
+협력 광고를 돌리지는 않으시는 것 같더라고요.
 
-      <h3 class="subhead">예시 1 · 네이버 브랜드스토어 입점 업체</h3>
-      <div class="script-card">
-        <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
-        <div class="script-body">안녕하세요 링크프라이스 000 대리입니다.
-지금 네이버 브랜드스토어로 확인되시는데 협력 광고를 돌리지는 않으시는 것 같더라고요.
+브랜드스토어 고객 모수를 메타에서도 그대로 활용
+가능 하신데, 저희 고객층 분들이 많이 활용하는
+플랫폼에서 광고를 안 하실 이유가 없거든요.
 
-브랜드스토어 고객 모수를 메타에서도 그대로 활용 가능 하신데
-저희 고객층 분들이 많이 활용하는 플랫폼에서 광고를 안 하실 이유가 없거든요.
+지금 경쟁사들은 전부 협력광고 통해서 대표님
+업체 고객들은 물론, 본인들 고객 대상으로도
+계속해서 광고 노출하고 있습니다.
 
-지금 경쟁사들은 전부 협력광고 통해서 대표님 업체 고객들은 물론이고,
-본인들 고객 대상으로도 계속해서 광고 노출하고 있습니다.
+협력광고 진행하시면 이미지 소재도 전부
+<b>무료로 제작</b> 도와드리고 있습니다.</div>
+          </div>
+          <p style="font-size:11.6px;color:var(--muted-2);margin-top:8px;">브랜드스토어 확인: search.shopping.naver.com/search/all?query=키워드&amp;productSet=brandstore</p>
+        </div>
+        <div>
+          <h3 class="subhead">예시 2 · 무신사 입점 업체</h3>
+          <div class="script-card">
+            <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
+            <div class="script-body">안녕하세요 링크프라이스 000 대리입니다.
+지금 무신사 입점되어 계신 걸로 확인되는데
+협력광고 해보셨을까요?
 
-한 명이라도 더 뺏어와야 하는 상황에서 이대로만 계셔서는 안 됩니다.
-협력광고 진행하시게 되면 저희가 이미지 소재도 전부 <b>무료로 제작</b> 도와드리고 있습니다.</div>
+무신사 고객 모수를 메타에서도 그대로 활용
+가능 하신데, 저희 같은 브랜드는 인스타그램에서
+보였을 때 충분히 경쟁력 있거든요.
+
+장기적으로 매출 볼륨 키우시려면 충성 고객을
+쌓으셔야 하는데, 지금처럼 무신사 안에서만
+광고하시기엔 경쟁이 너무 치열합니다.
+
+혹시 무신사 독점 계약이 걸려있지 않으시다면,
+저희가 소재 제작이며 광고 관리까지 전부
+도와드릴 테니 같이 진행해 보시겠어요?</div>
+          </div>
+        </div>
       </div>
-      <div class="step" style="margin-bottom:8px;">
-        <h4>브랜드스토어 확인 방법</h4>
-        <p>아래 URL의 키워드 부분에 검색하려는 키워드를 입력하면 브랜드스토어만 필터링해서 검색할 수 있습니다.</p>
-        <span class="link" style="cursor:default;">search.shopping.naver.com/search/all?query=키워드&amp;productSet=brandstore</span>
-      </div>
+    </div>
+  </section>
 
-      <h3 class="subhead" style="margin-top:36px;">예시 2 · 무신사 입점 업체</h3>
-      <div class="script-card">
-        <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
-        <div class="script-body">안녕하세요 링크프라이스 000 대리입니다.
-지금 무신사 입점되어 계신 걸로 확인되는데 협력광고 해보셨을까요?
-
-무신사 고객 모수를 메타에서도 그대로 활용 가능 하신데
-저희 같은 브랜드는 인스타그램에서 보였을 때 충분히 경쟁력 있거든요.
-
-결국에 장기적으로 매출 볼륨 키우시려면 충성 고객을 쌓으셔야 하는데
-지금처럼 무신사 안에서만 광고하시기에는 경쟁이 너무 치열합니다.
-
-혹시 무신사 독점 계약이 걸려있거나 하시지는 않으시죠?
-그렇다면 저희가 이미지 소재 제작이며 광고 관리까지 전부 도와 드릴테니까
-저희랑 같이 협력광고 한번 진행해 보시지 않으시겠어요?</div>
-      </div>
-    </section>
-
-    <!-- ============ 메타 권한 부여 프로세스 ============ -->
-    <section class="section" id="meta-permission">
+  <section class="slide" data-chapter="메타 영업" data-color="#4C5FFF" data-title="메타 권한 부여 프로세스">
+    <div class="slide-inner">
       <span class="chapter-badge meta">CHAPTER 01 · 메타 영업</span>
       <h2>메타 권한 부여 프로세스</h2>
-      <p class="section-lead">계약이 성사된 후 광고주 계정에 접근하기 위한 실무 절차입니다. 6단계 순서를 그대로 따라가면 됩니다.</p>
-
+      <p class="section-lead">계약이 성사된 후 광고주 계정에 접근하기 위한 6단계 실무 절차입니다.</p>
       <div class="steps">
-        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">1</div>
-          <h4>광고관리자 접속하기</h4>
-          <p>좌측 막대기 3개 &gt; 모든 도구 &gt; 비즈니스 설정</p>
-          <a class="link" href="https://adsmanager.facebook.com/adsmanager" target="_blank" rel="noopener">adsmanager.facebook.com</a>
-        </div>
-        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">2</div>
-          <h4>사람 초대 누르기</h4>
-          <p>사용자 &gt; 사람 &gt; +초대하기</p>
-        </div>
-        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">3</div>
-          <h4>이메일 주소 입력하기</h4>
-          <p>마케터 본인의 이메일 주소를 입력해 초대를 요청합니다.</p>
-        </div>
-        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">4</div>
-          <h4>비즈니스 액세스 권한 부여하기</h4>
-          <p>부분/전체 상관없으나, <b>전체 액세스</b>를 활성화하는 편이 관리에 더 편합니다.</p>
-        </div>
-        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">5</div>
-          <h4>자산 선택하기</h4>
-          <p>권한 부여할 자산과 액세스 권한을 선택합니다. 광고주가 자산 부여를 놓쳤을 때, 포트폴리오 전체 관리 권한이 있다면 셀프로 부여도 가능합니다.</p>
-        </div>
-        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">6</div>
-          <h4>권한 초대 확인하기</h4>
-          <p>처음 입력한 이메일에서 초대를 확인합니다. 단, 보안상의 이유로 <b>요청 탭</b>에서 다른 비즈니스 관리자가 수락을 눌러줘야 발송되는 경우가 있으니 유의하세요.</p>
-        </div>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">1</div><h4>광고관리자 접속</h4><p>좌측 막대기 3개 &gt; 모든 도구 &gt; 비즈니스 설정</p></div>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">2</div><h4>사람 초대 누르기</h4><p>사용자 &gt; 사람 &gt; +초대하기</p></div>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">3</div><h4>이메일 주소 입력</h4><p>마케터 본인의 이메일 주소로 초대를 요청합니다.</p></div>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">4</div><h4>비즈니스 액세스 부여</h4><p><b>전체 액세스</b>가 관리에 더 편리합니다.</p></div>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">5</div><h4>자산 선택하기</h4><p>포트폴리오 전체 관리 권한이 있다면 셀프 부여도 가능합니다.</p></div>
+        <div class="step"><div class="step-num" style="background:var(--meta-soft);color:var(--meta)">6</div><h4>권한 초대 확인</h4><p>보안상 <b>요청 탭</b>에서 다른 관리자의 수락이 필요할 수 있습니다.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============ CH2. 지표 용어 ============ -->
-    <section class="section" id="metric-basic">
+  <!-- ===================== CHAPTER 02 : METRICS ===================== -->
+  <section class="slide dark divider-slide" data-chapter="핵심 지표" data-color="#0E9488" data-title="Ch.02 핵심 지표 이해">
+    <div class="slide-inner">
+      <div class="divider-num">02</div>
+      <h1>핵심 지표 이해</h1>
+      <p class="hero-desc" style="margin:0;">CTR, CPC, CVR, CPS… 신입이 가장 헷갈려 하는 구간을 광고주에게 바로 설명할 수 있는 수준까지</p>
+      <div class="divider-topics">
+        <span>도달 · 노출 지표</span><span>클릭 · 전환 지표</span><span>지표로 문제 진단하기</span><span>미니 퀴즈 3종</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-chapter="핵심 지표" data-color="#0E9488" data-title="도달·노출 지표">
+    <div class="slide-inner">
       <span class="chapter-badge metric">CHAPTER 02 · 핵심 지표</span>
-      <h2>메타 광고 핵심 지표 용어 정리</h2>
-      <p class="section-lead">CTR, CPC, CVR, CPS… 신입이 가장 헷갈려 하는 구간입니다. 광고주 미팅에서 즉시 설명할 수 있을 정도로 암기해두세요.</p>
-
-      <h3 class="subhead">도달 · 노출 관련</h3>
+      <h2>도달 · 노출 지표부터 정확히</h2>
+      <p class="section-lead">여기가 가장 기초지만, 노출과 도달을 같은 말로 착각하는 신입이 많습니다.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>용어</th><th>정의</th><th>계산식</th><th>비고</th></tr></thead>
@@ -268,274 +264,316 @@ A/B테스트 없이 동일하게 진행되고 있는 것 같아서요.
             <tr><td><b>노출</b><br>Impressions</td><td>광고가 화면에 나타난 횟수</td><td class="formula">—</td><td>같은 사람에게 여러 번 떠도 중복 카운트</td></tr>
             <tr><td><b>도달</b><br>Reach</td><td>광고를 본 고유 사용자 수</td><td class="formula">—</td><td>중복 제거된 인원 수</td></tr>
             <tr><td><b>빈도</b><br>Frequency</td><td>한 사람이 광고를 평균 몇 번 봤는가</td><td class="formula">노출 ÷ 도달</td><td>3~4 이상이면 소재 피로 의심 구간</td></tr>
-            <tr><td><b>CPM</b></td><td>노출 1,000회당 비용</td><td class="formula">(총비용 ÷ 노출) × 1,000</td><td>시장 경쟁도·타겟 크기에 따라 변동</td></tr>
+            <tr><td><b>CPM</b></td><td>노출 1,000회당 비용</td><td class="formula">(총비용 ÷ 노출) × 1,000</td><td>시장 경쟁도 · 타겟 크기에 따라 변동</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
+      <div class="callout warn"><b>실무 감각.</b> 빈도가 오르면 CPM도 같이 오르는 경우가 흔합니다 — 같은 사람에게 반복 노출되면서 알고리즘이 더 넓은(비싼) 타겟까지 끌어오기 때문입니다. "빈도가 오르는데 CPM은 왜 오르나요?"라는 질문에 이 논리로 답할 수 있어야 합니다.</div>
+    </div>
+  </section>
 
-    <section class="section" id="metric-conv">
+  <section class="slide" data-chapter="핵심 지표" data-color="#0E9488" data-title="클릭·전환 지표">
+    <div class="slide-inner">
       <span class="chapter-badge metric">CHAPTER 02 · 핵심 지표</span>
       <h2>클릭 · 전환 지표</h2>
-
       <h3 class="subhead">클릭 관련</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>용어</th><th>정의</th><th>계산식</th><th>참고 기준</th></tr></thead>
           <tbody>
-            <tr><td><b>CTR</b><br>클릭률</td><td>노출 대비 클릭 비율</td><td class="formula">(클릭 ÷ 노출) × 100</td><td>피드 기준 1% 내외 평균, 2%↑ 양호 (업종별 편차 큼)</td></tr>
-            <tr><td><b>CPC</b><br>클릭당 비용</td><td>클릭 1회당 비용</td><td class="formula">총비용 ÷ 클릭</td><td>CTR이 높으면 CPC는 낮아지는 경향</td></tr>
+            <tr><td><b>CTR</b> 클릭률</td><td>노출 대비 클릭 비율</td><td class="formula">(클릭 ÷ 노출) × 100</td><td>피드 기준 1% 내외 평균, 2%↑ 양호</td></tr>
+            <tr><td><b>CPC</b> 클릭당 비용</td><td>클릭 1회당 비용</td><td class="formula">총비용 ÷ 클릭</td><td>CTR이 높으면 CPC는 낮아지는 경향</td></tr>
           </tbody>
         </table>
       </div>
-
-      <h3 class="subhead">전환 관련</h3>
+      <h3 class="subhead">전환 관련 — 신입이 가장 헷갈리는 구간</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>용어</th><th>정의</th><th>계산식</th><th>설명 포인트</th></tr></thead>
           <tbody>
-            <tr><td><b>CVR</b><br>전환율</td><td>클릭(방문) 대비 전환 비율</td><td class="formula">(전환수 ÷ 클릭수) × 100</td><td>"클릭은 됐는데 왜 안 사는가" → 랜딩페이지 진단에 활용</td></tr>
-            <tr><td><b>CPA</b><br>전환당 비용</td><td>전환 1건당 발생 비용</td><td class="formula">총비용 ÷ 전환수</td><td>광고주가 가장 민감하게 보는 숫자</td></tr>
-            <tr><td><b>CPS</b><br>구매당 비용</td><td>"구매" 전환에 한정한 CPA</td><td class="formula">총비용 ÷ 구매건수</td><td>이커머스는 CPA=CPS로 혼용, 리드젠은 문의당 비용과 구분 설명 필요</td></tr>
+            <tr><td><b>CVR</b> 전환율</td><td>클릭 대비 전환 비율</td><td class="formula">(전환수 ÷ 클릭수) × 100</td><td>"클릭은 됐는데 왜 안 사는가" → 랜딩페이지 진단</td></tr>
+            <tr><td><b>CPA</b> 전환당 비용</td><td>전환 1건당 발생 비용</td><td class="formula">총비용 ÷ 전환수</td><td>광고주가 가장 민감하게 보는 숫자</td></tr>
+            <tr><td><b>CPS</b> 구매당 비용</td><td>"구매"에 한정한 CPA</td><td class="formula">총비용 ÷ 구매건수</td><td>이커머스는 CPA=CPS 혼용, 리드젠은 구분 필요</td></tr>
             <tr><td><b>ROAS</b></td><td>광고비 대비 매출</td><td class="formula">(전환매출 ÷ 광고비) × 100</td><td>"300%"는 1만원 써서 3만원 매출 — 이익률 아님</td></tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
 
-      <div class="callout good">
-        <b>자주 하는 실수.</b> ROAS 300%를 "순이익 3배"로 착각하는 신입이 많습니다. 매출 기준이지 마진 기준이 아니라는 점을 반드시 짚어주세요. 원가율/마진율을 곱해 손익분기 ROAS(BEROAS)까지 설명하면 훨씬 심화된 상담이 가능합니다.
-      </div>
-    </section>
-
-    <section class="section" id="metric-flow">
+  <section class="slide" data-chapter="핵심 지표" data-color="#0E9488" data-title="지표 관계도 & 퍼널">
+    <div class="slide-inner">
       <span class="chapter-badge metric">CHAPTER 02 · 핵심 지표</span>
-      <h2>지표 간 관계 한눈에 보기</h2>
-      <p class="section-lead">CPA가 높다는 리포트를 받으면, 어느 구간에서 이탈이 생기는지 이 흐름대로 되짚어 설명하는 훈련이 필요합니다.</p>
+      <h2>지표는 퍼널로 이해해야 한다</h2>
+      <p class="section-lead">아래 예시 숫자(노출 100,000 → 클릭 1,500 → 전환 30)로 각 단계에서 얼마나 이탈하는지 직접 눈으로 보면 이해가 훨씬 빠릅니다.</p>
 
-      <div class="flow">
-        <span class="node">노출</span>
-        <span class="op">CTR</span>
-        <span class="arrow">→</span>
-        <span class="node">클릭</span>
-        <span class="op">CVR</span>
-        <span class="arrow">→</span>
-        <span class="node">전환 · 구매</span>
-      </div>
-      <div class="flow" style="margin-top:-4px;">
-        <span class="node">CPA / CPS</span>
-        <span class="arrow">=</span>
-        <span class="node">총비용 ÷ 전환수</span>
-      </div>
-      <div class="flow" style="margin-top:-4px;">
-        <span class="node">ROAS</span>
-        <span class="arrow">=</span>
-        <span class="node">매출 ÷ 총비용</span>
+      <div class="funnel">
+        <div class="funnel-stage">
+          <div class="num">100,000</div><div class="lbl">노출</div>
+          <div class="bar" style="width:92%;background:var(--meta);"></div>
+        </div>
+        <div class="funnel-drop">CTR 1.5%<br><b>▸</b></div>
+        <div class="funnel-stage">
+          <div class="num">1,500</div><div class="lbl">클릭</div>
+          <div class="bar" style="width:55%;background:var(--metric);"></div>
+        </div>
+        <div class="funnel-drop">CVR 2%<br><b>▸</b></div>
+        <div class="funnel-stage">
+          <div class="num">30</div><div class="lbl">전환 · 구매</div>
+          <div class="bar" style="width:14%;background:var(--google);"></div>
+        </div>
       </div>
 
-      <div class="callout good">
-        <b>진단 포인트.</b> CPA가 높다 → 클릭이 안 되는지(CTR 문제 = 소재), 클릭은 되는데 안 사는지(CVR 문제 = 랜딩/가격/신뢰) 구분해서 짚어주는 게 컨설팅형 영업의 핵심입니다.
+      <div class="flow" style="margin-top:14px;">
+        <span class="node">CPA / CPS</span><span class="arrow">=</span><span class="node">총비용 ÷ 전환수</span>
+        <span class="node" style="margin-left:18px;">ROAS</span><span class="arrow">=</span><span class="node">매출 ÷ 총비용</span>
       </div>
-    </section>
 
-    <section class="section" id="metric-quiz">
+      <div class="callout warn">
+        <b>자주 하는 실수.</b> ROAS 300%를 "순이익 3배"로 착각하는 신입이 많습니다. 매출 기준이지 마진 기준이 아닙니다. 원가율(마진율)을 곱해 손익분기 ROAS(BEROAS = 100 ÷ 마진율(%))까지 설명하면 훨씬 심화된 상담이 가능합니다.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-chapter="핵심 지표" data-color="#0E9488" data-title="지표로 문제 진단하기">
+    <div class="slide-inner">
+      <span class="chapter-badge metric">CHAPTER 02 · 핵심 지표</span>
+      <h2>지표로 문제를 진단하는 법</h2>
+      <p class="section-lead">"CPA가 왜 이렇게 높아요?"라는 질문을 받았을 때, 퍼널의 어느 구간에서 이탈이 생기는지 되짚어 설명하는 게 컨설팅형 영업의 핵심입니다.</p>
+      <div class="table-wrap">
+        <table class="diag-table">
+          <thead><tr><th>증상</th><th>의심되는 원인</th><th>먼저 확인할 지표</th><th>제안할 액션</th></tr></thead>
+          <tbody>
+            <tr><td class="sym">CTR이 낮다</td><td>소재 매력도 부족 / 타겟 미스매치</td><td>빈도, 오디언스 크기</td><td class="act">신규 소재 테스트, 타겟팅 재설정</td></tr>
+            <tr><td class="sym">CTR은 높은데 CVR이 낮다</td><td>랜딩페이지·가격 매력 부족, 클릭 후 이탈</td><td>랜딩 로딩속도, 가격 경쟁력</td><td class="act">랜딩페이지 개선, 리마케팅 세팅</td></tr>
+            <tr><td class="sym">CPM이 급등한다</td><td>경쟁 심화 / 오디언스 축소·소재 피로</td><td>빈도, 타겟 중복도</td><td class="act">오디언스 확장, 입찰전략 점검</td></tr>
+            <tr><td class="sym">CPA↑ ROAS↓ 동시에</td><td>퍼널 전체 복합 이슈</td><td>CTR · CVR · CPM 전체</td><td class="act">소재 · 타겟 · 랜딩 동시 A/B 테스트</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout good"><b>기억할 것.</b> "좋은 숫자, 나쁜 숫자"는 절대적이지 않습니다. 업종 마진율, 퍼널 단계, 캠페인 목표에 따라 같은 CPA도 전혀 다르게 해석됩니다 — 광고주 비즈니스 맥락을 먼저 물어보는 습관을 들이세요.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-chapter="핵심 지표" data-color="#0E9488" data-title="미니 계산 퀴즈 3종">
+    <div class="slide-inner">
       <span class="chapter-badge metric">CHAPTER 02 · 핵심 지표</span>
       <h2>미니 계산 퀴즈</h2>
-      <p class="section-lead">신입 교육 시 즉석에서 풀려보고, 30초 내 답이 안 나오면 앞 장 표를 다시 보게 하세요.</p>
-
-      <div class="card">
-        <p style="margin-bottom:0;">노출 100,000회, 클릭 1,500회, 전환 30건, 광고비 90만 원, 전환 매출 450만 원일 때<br><b>CTR / CPC / CVR / CPA / ROAS</b>를 각각 구하시오.</p>
-      </div>
-
-      <details class="quiz">
-        <summary>정답 확인하기</summary>
-        <div class="answer">CTR 1.5%　·　CPC 600원　·　CVR 2%　·　CPA 30,000원　·　ROAS 500%</div>
-      </details>
-    </section>
-
-    <!-- ============ CH3. 케이스 뱅크 ============ -->
-    <section class="section" id="bank-cases">
-      <span class="chapter-badge bank">CHAPTER 03 · 케이스 뱅크</span>
-      <h2>추가 실습 케이스 6종</h2>
-      <p class="section-lead">기본 스크립트를 익혔다면, 아래 상황별 케이스로 롤플레이 훈련을 확장하세요. 각 카드를 펼치면 상황·전략·반론처리가 나옵니다.</p>
+      <p class="section-lead">신입 교육 시 즉석에서 풀려보세요. 30초 내 답이 안 나오면 앞 장을 다시 보게 하는 것을 추천합니다.</p>
 
       <div class="accordion">
+        <details class="quiz">
+          <summary><span class="qnum">1</span>기본 계산 — CTR / CPC / CVR / CPA / ROAS</summary>
+          <div class="quiz-body">
+            <p class="quiz-q">노출 100,000회, 클릭 1,500회, 전환 30건, 광고비 90만 원, 전환 매출 450만 원일 때 각 지표를 구하시오.</p>
+            <div class="quiz-a">CTR 1.5%　·　CPC 600원　·　CVR 2%　·　CPA 30,000원　·　ROAS 500%</div>
+          </div>
+        </details>
 
+        <details class="quiz">
+          <summary><span class="qnum">2</span>진단형 — 빈도와 CTR 하락</summary>
+          <div class="quiz-body">
+            <p class="quiz-q">빈도가 5.2까지 오르고, 지난주 대비 CTR이 40% 하락했습니다. 무엇을 가장 먼저 점검해야 할까요?</p>
+            <div class="quiz-a">소재 피로도 의심 → 동일 소재 장기 노출이 원인일 가능성이 큼. 신규 소재 투입 / 소재 순환 세팅을 우선 제안하고, 오디언스 확장 여지도 함께 점검.</div>
+          </div>
+        </details>
+
+        <details class="quiz">
+          <summary><span class="qnum">3</span>심화 — 손익분기 ROAS(BEROAS)</summary>
+          <div class="quiz-body">
+            <p class="quiz-q">원가율이 40%(마진율 60%)인 브랜드가 본전을 맞추려면 최소 ROAS는 몇 %여야 할까요? (BEROAS = 100 ÷ 마진율(%) × 100)</p>
+            <div class="quiz-a">BEROAS = 100 ÷ 60 × 100 ≈ 166.7% — ROAS가 167%를 넘어야 실제 이익이 나기 시작합니다.</div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAPTER 03 : CASE BANK ===================== -->
+  <section class="slide dark divider-slide" data-chapter="케이스 뱅크" data-color="#8B5CF6" data-title="Ch.03 케이스 뱅크">
+    <div class="slide-inner">
+      <div class="divider-num">03</div>
+      <h1>실습 케이스 뱅크</h1>
+      <p class="hero-desc" style="margin:0;">기본 스크립트를 익혔다면, 상황별 케이스로 롤플레이 훈련을 확장하는 단계입니다.</p>
+      <div class="divider-topics">
+        <span>콜드 아웃리치</span><span>경쟁 전환</span><span>데이터 컨설팅</span><span>업셀</span><span>반론처리</span><span>구글 진단형</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-chapter="케이스 뱅크" data-color="#8B5CF6" data-title="추가 실습 케이스 6종">
+    <div class="slide-inner">
+      <span class="chapter-badge bank">CHAPTER 03 · 케이스 뱅크</span>
+      <h2>추가 실습 케이스 6종</h2>
+      <p class="section-lead">각 카드를 펼치면 상황 · 전략 · 반론처리가 나옵니다.</p>
+      <div class="accordion">
         <details class="case">
           <summary><span class="letter">A</span>콜드 아웃리치 — 라이브러리 기반 신규 발굴</summary>
           <div class="case-body">
             <p><b>상황.</b> 운영 중인 광고는 확인되지만 소재가 오래되고 반응이 저조해 보이는 브랜드에 첫 연락.</p>
-            <p><b>전략.</b> 무작정 영업하지 말고 라이브러리에서 확인한 사실을 근거로 접근 → 전문성과 관심을 동시에 어필. 첫 메시지는 절대 가격/계약 언급 없이 "질문"으로 마무리.</p>
-            <table class="obj-table">
-              <tr><td>"지금 대행사 잘 쓰고 있어요"</td><td>부정하지 않고 "참고로만 저희가 본 부분 공유드려도 될까요?" — 정보 제공자 포지션 유지</td></tr>
-            </table>
+            <p><b>전략.</b> 라이브러리에서 확인한 사실을 근거로 접근 → 전문성 어필. 첫 메시지는 가격/계약 언급 없이 "질문"으로 마무리.</p>
+            <table class="obj-table"><tr><td>"지금 대행사 잘 쓰고 있어요"</td><td>부정하지 않고 "참고로만 저희가 본 부분 공유드려도 될까요?"</td></tr></table>
           </div>
         </details>
-
         <details class="case">
           <summary><span class="letter">B</span>경쟁 전환 영업 — 타 대행사 이용 중인 광고주</summary>
           <div class="case-body">
-            <p><b>상황.</b> 이미 대행사를 쓰지만 성과 불만이 있어 보이는 광고주. 소재 퀄리티나 캠페인 다양성이 부족.</p>
+            <p><b>상황.</b> 이미 대행사를 쓰지만 성과 불만이 있어 보이는 광고주.</p>
             <p><b>전략.</b> 기존 대행사를 직접 비난하지 않고 "이런 부분은 놓치기 쉬운데 확인해보셨나요?" 식 컨설팅형 접근. 무료 계정 진단으로 리스크 없는 첫 단계 제시.</p>
             <table class="obj-table">
-              <tr><td>"계약 기간이 남았어요"</td><td>계약 종료 시점에 맞춰 비교 자료를 미리 준비해 장기 팔로업으로 전환</td></tr>
+              <tr><td>"계약 기간이 남았어요"</td><td>종료 시점에 맞춰 비교 자료를 미리 준비해 장기 팔로업으로 전환</td></tr>
               <tr><td>"가격이 더 저렴한가요?"</td><td>가격이 아닌 "성과당 효율(ROAS/CPA)"로 프레임 전환</td></tr>
             </table>
           </div>
         </details>
-
         <details class="case">
           <summary><span class="letter">C</span>데이터 기반 컨설팅 영업 — 성과 부진 광고주</summary>
           <div class="case-body">
-            <p><b>상황.</b> 빈도 4.0 이상, CPA 전월 대비 40% 상승, ROAS 하락 중인 광고주.</p>
-            <p><b>전략.</b> 감이 아니라 숫자로 문제를 짚고, 숫자로 해결책을 제시. "왜 이렇게 됐는지 → 어떻게 고칠 건지" 순서로 스토리텔링. 숫자는 항상 "추정/가능성" 언어로 — 과장된 확정 표현은 신뢰를 깎습니다.</p>
-            <p><b>클로징.</b> 제안 뒤 반드시 다음 단계 제시 — 예) "2주 파일럿 테스트 어떠세요?"</p>
+            <p><b>상황.</b> 빈도 4.0 이상, CPA 전월 대비 40% 상승, ROAS 하락 중.</p>
+            <p><b>전략.</b> 숫자로 문제를 짚고 숫자로 해결책 제시. "왜 이렇게 됐는지 → 어떻게 고칠 건지" 순서. 숫자는 항상 "추정/가능성" 언어로.</p>
+            <p><b>클로징.</b> "2주 파일럿 테스트 어떠세요?" 처럼 다음 단계를 명확히.</p>
           </div>
         </details>
-
         <details class="case">
           <summary><span class="letter">D</span>업셀 영업 — 기존 고객 예산 확대</summary>
           <div class="case-body">
-            <p><b>상황.</b> 리타겟팅 캠페인이 ROAS 9 이상으로 잘 나오는 고객에게 예산 증액을 제안.</p>
-            <p><b>전략.</b> "확장 여력"을 근거로 제시 — 도달률이 아직 낮다면 스케일 여지가 있다는 뜻. 한 번에 큰 폭 증액을 요구하지 말고, 20% 증액 → 1주 테스트처럼 단계적으로 제안.</p>
+            <p><b>상황.</b> 리타겟팅 캠페인 ROAS 9 이상 고객에게 예산 증액 제안.</p>
+            <p><b>전략.</b> "확장 여력"을 근거로 — 도달률이 낮으면 스케일 여지가 있다는 뜻. 20% 증액 → 1주 테스트처럼 단계적 제안.</p>
           </div>
         </details>
-
         <details class="case">
           <summary><span class="letter">E</span>반론처리 집중 롤플레이</summary>
           <div class="case-body">
-            <p>트레이너가 아래 반론을 무작위로 던지고 즉석 대응하는 훈련입니다.</p>
             <table class="obj-table">
               <tr><td>"예산 늘려도 성과 안 나올 것 같은데요?"</td><td>리스크를 낮추는 단계적 테스트안으로 전환</td></tr>
               <tr><td>"내부에서 직접 운영할게요"</td><td>운영 리소스·전문성 비교로 접근, 강요하지 않기</td></tr>
-              <tr><td>"다른 업체는 더 싸게 해준다던데요"</td><td>가격이 아닌 성과당 효율로 프레임 전환</td></tr>
-              <tr><td>"성과 보장해줄 수 있나요?"</td><td>"100% 보장은 어렵지만, 데이터 기반으로 리스크를 최소화하는 방식으로 진행합니다" — 정직하되 전문성 있는 화법</td></tr>
+              <tr><td>"성과 보장해줄 수 있나요?"</td><td>"100% 보장은 어렵지만, 데이터 기반으로 리스크를 최소화합니다" — 정직하되 전문성 있는 화법</td></tr>
             </table>
           </div>
         </details>
-
         <details class="case">
-          <summary><span class="letter">F</span>구글 검색어·PMax 진단 영업</summary>
+          <summary><span class="letter">F</span>구글 검색어 · PMax 진단 영업</summary>
           <div class="case-body">
-            <p><b>검색어 보고서.</b> 관련성 낮은 검색어에 예산이 새고 있는 상황을 진단 → 제외 키워드 리스트와 예상 절감 예산을 근거로 제안.</p>
+            <p><b>검색어 보고서.</b> 관련성 낮은 검색어에 예산이 새는 상황을 진단 → 제외 키워드와 예상 절감 예산으로 제안.</p>
             <p><b>PMax 진단.</b> 전환수는 늘었는데 CPA가 상승 중인 계정에서 자산 그룹 성과 편차, 잠재고객 신호 설정 여부를 진단 포인트로 활용.</p>
           </div>
         </details>
-
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============ CH4. 구글 강점 ============ -->
-    <section class="section" id="google-strength">
-      <span class="chapter-badge google">CHAPTER 02 · 구글 영업</span>
+  <!-- ===================== CHAPTER 04 : GOOGLE ===================== -->
+  <section class="slide dark divider-slide" data-chapter="구글 영업" data-color="#F2723A" data-title="Ch.04 구글 영업">
+    <div class="slide-inner">
+      <div class="divider-num">04</div>
+      <h1>구글 영업 케이스</h1>
+      <p class="hero-desc" style="margin:0;">구글의 강점부터 AEO, P.MAX, 쇼핑 무료 입점, 권한 부여까지</p>
+      <div class="divider-topics">
+        <span>구글의 강점</span><span>AEO 영업</span><span>P.MAX 영업</span><span>쇼핑 무료 입점</span><span>권한 부여</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-chapter="구글 영업" data-color="#F2723A" data-title="구글만의 강점">
+    <div class="slide-inner">
+      <span class="chapter-badge google">CHAPTER 04 · 구글 영업</span>
       <h2>구글만의 강점</h2>
-      <p class="section-lead">Google Ads는 네이버·오픈마켓보다 광고주들의 운영 경험이 적은 곳이 많아 상대적으로 도입 장벽이 낮습니다.</p>
-
+      <p class="section-lead">Google Ads는 네이버 · 오픈마켓보다 광고주들의 운영 경험이 적은 곳이 많아 상대적으로 도입 장벽이 낮습니다.</p>
       <div class="card-grid">
-        <div class="card">
-          <div class="icon" style="background:var(--google-soft);color:var(--google);">💬</div>
-          <h4>"현재 네이버만 운영 중이실까요?"</h4>
-          <p>운영 채널이 하나뿐인 광고주에게 던지는 첫 질문. "AEO의 시작은 구글입니다"로 이어가면 자연스럽습니다.</p>
-        </div>
-        <div class="card">
-          <div class="icon" style="background:var(--google-soft);color:var(--google);">📈</div>
-          <h4>"자사몰 확장 하실 땐 구글 광고를 하셔야 합니다"</h4>
-          <p>브랜드 인지도를 높이려는 광고주에게는 "브랜드의 인지도를 높이시려면 구글 광고를 하셔야 합니다"로 연결합니다.</p>
-        </div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">💬</div><h4>"현재 네이버만 운영 중이실까요?"</h4><p>운영 채널이 하나뿐인 광고주에게 던지는 첫 질문. "AEO의 시작은 구글입니다"로 이어갑니다.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">📈</div><h4>"자사몰 확장 하실 땐 구글을 하셔야 합니다"</h4><p>브랜드 인지도를 높이려는 광고주에게는 "인지도를 높이시려면 구글 광고를 하셔야 합니다"로 연결.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="google-aeo">
-      <span class="chapter-badge google">CHAPTER 02 · 구글 영업</span>
+  <section class="slide" data-chapter="구글 영업" data-color="#F2723A" data-title="구글 AEO 영업">
+    <div class="slide-inner">
+      <span class="chapter-badge google">CHAPTER 04 · 구글 영업</span>
       <h2>구글 AEO 영업</h2>
       <p class="section-lead">AEO(Answer Engine Optimization)는 생성형 AI 검색 시대에 놓치면 손해인 무료 지면입니다.</p>
-
       <div class="card-grid">
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">✦</div><h4>생성형 AI 제품 노출</h4><p>광고 지면이 아닌 일반 지면에 추가 노출 기회를 확보합니다.</p></div>
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🔍</div><h4>자사몰 AEO 점검</h4><p>AI가 사이트를 읽지 못하면, 좋은 상품이라도 추천에 뜨지 않습니다.</p></div>
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🆓</div><h4>무료 지면 홍보</h4><p>비용을 쓰지 않는 지면에 노출을 안 하는 건 그 자체로 손해입니다.</p></div>
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">⚠️</div><h4>경쟁사 언급 격차</h4><p>경쟁사는 AI 답변에 노출되지만, 우리는 노출되지 않는 상황을 짚어줍니다.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">✦</div><h4>생성형 AI 제품 노출</h4><p>광고 지면이 아닌 일반 지면에 추가 노출 기회 확보.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🔍</div><h4>자사몰 AEO 점검</h4><p>AI가 사이트를 못 읽으면 좋은 상품도 추천에 뜨지 않음.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🆓</div><h4>무료 지면 홍보</h4><p>비용을 쓰지 않는 지면에 노출을 안 하는 건 손해.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">⚠️</div><h4>경쟁사 언급 격차</h4><p>경쟁사는 AI 답변에 노출, 우리는 노출되지 않는 상황을 짚어줌.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="google-pmax">
-      <span class="chapter-badge google">CHAPTER 02 · 구글 영업</span>
+  <section class="slide" data-chapter="구글 영업" data-color="#F2723A" data-title="P.MAX 영업">
+    <div class="slide-inner">
+      <span class="chapter-badge google">CHAPTER 04 · 구글 영업</span>
       <h2>P.MAX 영업</h2>
       <p class="section-lead">영상 제작 리소스가 없는 광고주에게 특히 강력한 카드입니다.</p>
       <div class="card-grid">
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🎬</div><h4>영상 자동 제작</h4><p>별도 영상이 없는 광고주에게 Google AI가 영상을 자동으로 제작해줍니다.</p></div>
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🌐</div><h4>구글 전체 위치 노출</h4><p>광고 성과가 높은 지면에 집중적으로 노출·운영됩니다.</p></div>
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🎯</div><h4>높은 도달률</h4><p>AI가 운영하기 때문에 유저에게 도달할 확률이 높은 지면에 자동 노출됩니다.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🎬</div><h4>영상 자동 제작</h4><p>별도 영상이 없어도 Google AI가 영상을 자동 제작.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🌐</div><h4>구글 전체 위치 노출</h4><p>광고 성과가 높은 지면에 집중적으로 노출·운영.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🎯</div><h4>높은 도달률</h4><p>AI가 도달 확률이 높은 지면에 자동 노출.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="google-shopping">
-      <span class="chapter-badge google">CHAPTER 02 · 구글 영업</span>
-      <h2>구글 쇼핑 무료 입점 진행</h2>
-      <div class="card-grid">
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🛒</div><h4>구글 쇼핑 무료 연동</h4><p>비용이 들어가는 복잡한 연동 과정을 무료로 진행할 수 있습니다.</p></div>
-        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">📊</div><h4>쇼핑 지면 활성화</h4><p>분석부터 유입률까지 리포트를 제공받을 수 있습니다.</p></div>
+  <section class="slide" data-chapter="구글 영업" data-color="#F2723A" data-title="구글 쇼핑 무료 입점 + 스크립트">
+    <div class="slide-inner">
+      <span class="chapter-badge google">CHAPTER 04 · 구글 영업</span>
+      <h2>구글 쇼핑 무료 입점 & 영업 스크립트</h2>
+      <div class="card-grid" style="margin-bottom:14px;">
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">🛒</div><h4>구글 쇼핑 무료 연동</h4><p>비용이 드는 복잡한 연동을 무료로 진행.</p></div>
+        <div class="card"><div class="icon" style="background:var(--google-soft);color:var(--google);">📊</div><h4>쇼핑 지면 활성화</h4><p>분석부터 유입률까지 리포트 제공.</p></div>
       </div>
-    </section>
-
-    <section class="section" id="google-shopping-script">
-      <span class="chapter-badge google">CHAPTER 02 · 구글 영업</span>
-      <h2>구글 쇼핑 영업 스크립트</h2>
-      <p class="section-lead"><b>영업 대상 —</b> 네이버엔 입점이 되어있는데 구글엔 입점이 되어있지 않은 브랜드</p>
-
+      <p class="subhead" style="margin-top:16px;">영업 대상 — 네이버엔 입점, 구글엔 미입점인 브랜드</p>
       <div class="script-card">
         <div class="script-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="label">콜드 콜 스크립트</span></div>
         <div class="script-body">안녕하세요? 링크프라이스 000 대리입니다.
 구글 쇼핑 입점 관련해서 안내차 연락드렸는데
-저희가 광고 운영뿐 아니라 상품 피드 구축부터 쇼핑 광고 세팅, 성과 운영까지
-함께 지원드리고 있는데, 현재 구글은 운영하고 계실까요?
+저희가 광고 운영뿐 아니라 상품 피드 구축부터
+쇼핑 광고 세팅, 성과 운영까지 함께 지원드리고
+있는데, 현재 구글은 운영하고 계실까요?
 
-네이버는 이미 경쟁이 치열한 시장인 반면, 구글은 아직 경쟁도가
-상대적으로 낮은 카테고리가 많아 추가적인 신규 고객 확보에 유리합니다.
+네이버는 이미 경쟁이 치열한 시장인 반면, 구글은
+경쟁도가 상대적으로 낮은 카테고리가 많아 신규
+고객 확보에 유리합니다. <b>기존 네이버 광고를 대체하는
+것이 아니라 매출을 늘릴 수 있는 추가 채널</b>입니다.
 
-특히 구매 의도가 높은 고객에게 상품 이미지, 가격, 브랜드명을 함께
-노출할 수 있어 클릭 후 구매 전환까지 이어지는 경우가 많습니다.
-
-<b>기존 네이버 광고를 대체하는 것이 아니라 매출을 늘릴 수 있는 추가 채널</b>이라고 보시면 됩니다.
-
-괜찮으시다면 입점과 광고 제안 드려보고 싶은데
-광고 집행 중이시라면 같이 화면을 보면서 이야기 나눠 볼 수 있을까요?
-— 또는 —
-개인 연락처 주시면 쉽게 카카오톡으로 내용 안내 드려도 괜찮으실까요?</div>
+괜찮으시다면 입점과 광고 제안을 드려보고 싶은데,
+화면을 보면서 이야기 나눠 볼 수 있을까요?</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============ 구글 권한부여 ============ -->
-    <section class="section" id="google-permission">
-      <span class="chapter-badge google">CHAPTER 02 · 구글 영업</span>
+  <section class="slide" data-chapter="구글 영업" data-color="#F2723A" data-title="구글 권한 부여 프로세스">
+    <div class="slide-inner">
+      <span class="chapter-badge google">CHAPTER 04 · 구글 영업</span>
       <h2>구글 권한 부여 프로세스</h2>
-      <div class="callout good">
-        <b>마케터 계정 생성이 필요 없습니다.</b> 본인 지메일로 광고주에게 아래 순서를 안내하면 됩니다.
-      </div>
+      <div class="callout good"><b>마케터 계정 생성이 필요 없습니다.</b> 본인 지메일로 광고주에게 아래 순서를 안내하면 됩니다.</div>
       <div class="flow" style="background:var(--google-soft);">
-        <span class="node">관리</span><span class="arrow">→</span>
-        <span class="node">액세스 및 보안</span><span class="arrow">→</span>
-        <span class="node">사용자</span><span class="arrow">→</span>
-        <span class="node">+ 버튼</span><span class="arrow">→</span>
-        <span class="node">마케터 이메일 입력</span><span class="arrow">→</span>
-        <span class="node">초대장 보내기</span>
+        <span class="node">관리</span><span class="arrow">→</span><span class="node">액세스 및 보안</span><span class="arrow">→</span><span class="node">사용자</span><span class="arrow">→</span><span class="node">+ 버튼</span><span class="arrow">→</span><span class="node">마케터 이메일 입력</span><span class="arrow">→</span><span class="node">초대장 보내기</span>
       </div>
-      <div class="chip-row">
-        <span class="chip">👤 광고주 — 초대 발송</span>
-        <span class="chip">📩 마케터 — 지메일로 초대 수락</span>
-      </div>
-    </section>
+      <div class="chip-row"><span class="chip">👤 광고주 — 초대 발송</span><span class="chip">📩 마케터 — 지메일로 초대 수락</span></div>
+    </div>
+  </section>
 
-    <!-- ============ Q&A ============ -->
-    <section class="qa" id="qa">
-      <h2>Q&amp;A</h2>
-      <p>감사합니다. 질문이 있으시면 편하게 말씀해 주세요.</p>
+  <!-- ============ CLOSING ============ -->
+  <section class="slide closing-slide dark" data-chapter="Q&A" data-color="#12142B" data-title="Q&A / 마무리">
+    <div class="slide-inner">
+      <span class="eyebrow">Q&amp;A</span>
+      <h2 style="color:#fff;">감사합니다</h2>
+      <p style="color:#C4C6E8;">질문이 있으시면 편하게 말씀해 주세요.</p>
       <div class="qa-contact">
         <div><span>Contact</span><strong>안희성 · hsan@linkprice.com</strong></div>
         <div><span>Next</span><strong>R/P 테스트 (메타 / 구글)</strong></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+</div><!-- /deck -->
+
+<!-- ============ OVERVIEW OVERLAY ============ -->
+<div class="overview" id="overview">
+  <button class="tb-btn overview-close" id="btnOverviewClose" title="닫기 (Esc)">✕</button>
+  <h3>전체 슬라이드 보기</h3>
+  <p class="hint">클릭하면 해당 슬라이드로 바로 이동합니다.</p>
+  <div class="overview-grid" id="overviewGrid"></div>
 </div>
 
 <script src="script.js"></script>
