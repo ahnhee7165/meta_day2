@@ -187,23 +187,38 @@ td b{color:var(--ink);}
 .diag-table .act{color:var(--good);font-weight:600;}
 
 .accordion{margin-top:10px;}
-details.case, details.quiz{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:9px;box-shadow:var(--shadow);overflow:hidden;}
-details.case summary, details.quiz summary{list-style:none;cursor:pointer;padding:13px 17px;display:flex;align-items:center;gap:11px;font-weight:700;font-size:13.3px;color:var(--ink);}
-details.case summary::-webkit-details-marker, details.quiz summary::-webkit-details-marker{display:none;}
+details.case{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:9px;box-shadow:var(--shadow);overflow:hidden;}
+details.case summary{list-style:none;cursor:pointer;padding:13px 17px;display:flex;align-items:center;gap:11px;font-weight:700;font-size:13.3px;color:var(--ink);}
+details.case summary::-webkit-details-marker{display:none;}
 details.case summary .letter{width:26px;height:26px;flex:none;border-radius:8px;background:var(--bank-soft);color:var(--bank);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;}
-details.case summary::after, details.quiz summary::after{content:'펼치기';margin-left:auto;font-size:11px;font-weight:600;color:var(--muted-2);}
-details.case[open] summary::after, details.quiz[open] summary::after{content:'접기';}
+details.case summary::after{content:'펼치기';margin-left:auto;font-size:11px;font-weight:600;color:var(--muted-2);}
+details.case[open] summary::after{content:'접기';}
 details.case .case-body{padding:0 17px 17px;color:var(--muted);font-size:12.2px;}
 details.case .case-body b{color:var(--text);}
 .obj-table{width:100%;border-collapse:collapse;margin-top:9px;font-size:12px;}
 .obj-table td{padding:6px 0;border-bottom:1px dashed var(--border);vertical-align:top;}
 .obj-table td:first-child{color:var(--bank);font-weight:600;width:38%;padding-right:14px;}
 
-details.quiz summary{color:var(--metric);}
-details.quiz summary .qnum{width:23px;height:23px;border-radius:7px;background:var(--metric-soft);color:var(--metric);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;flex:none;}
-details.quiz .quiz-body{padding:0 17px 17px;font-size:12.5px;}
-details.quiz .quiz-q{color:var(--text);margin-bottom:9px;}
-details.quiz .quiz-a{font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--metric-soft);color:var(--ink);padding:9px 13px;border-radius:9px;}
+/* ---------- Quiz card (question always visible, answer revealed on demand) ---------- */
+.quiz-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px 15px;margin-bottom:10px;box-shadow:var(--shadow);}
+.quiz-card .qhead{display:flex;align-items:flex-start;gap:10px;margin-bottom:4px;}
+.quiz-card .qnum{width:23px;height:23px;border-radius:7px;background:var(--metric-soft);color:var(--metric);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;flex:none;margin-top:1px;}
+.quiz-card .quiz-q{color:var(--text);font-size:13px;font-weight:600;margin:0;line-height:1.55;}
+.quiz-card .reveal-wrap{margin:10px 0 0 33px;}
+details.reveal{display:inline-block;}
+details.reveal summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  font-size:11.6px;font-weight:700;color:var(--metric);background:var(--metric-soft);
+  padding:6px 14px;border-radius:99px;border:1px solid #BEEAE4;transition:background .15s;
+}
+details.reveal summary:hover{background:#CFF3EE;}
+details.reveal summary::-webkit-details-marker{display:none;}
+details.reveal summary::before{content:'정답 보기 ▸';}
+details.reveal[open] summary::before{content:'정답 닫기 ▾';}
+details.reveal .quiz-a{
+  margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11.8px;line-height:1.6;
+  background:var(--metric-soft);color:var(--ink);padding:11px 15px;border-radius:9px;max-width:640px;
+}
 
 .agenda-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px;}
 .agenda-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
