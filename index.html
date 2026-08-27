@@ -29,9 +29,12 @@
 
 <!-- ============ KEYBOARD HINT ============ -->
 <div class="kbd-hint" id="kbdHint">
-  <span><kbd>←</kbd><kbd>→</kbd> 슬라이드 이동</span>
+  <span><kbd>←</kbd><kbd>→</kbd> 이동</span>
   <span><kbd>F</kbd> 큰 화면</span>
   <span><kbd>G</kbd> 전체 보기</span>
+  <span><kbd>M</kbd> 돋보기</span>
+  <span><kbd>P</kbd> 펜</span>
+  <span><kbd>E</kbd> 지우개</span>
 </div>
 
 <!-- ============ DECK ============ -->
@@ -590,6 +593,30 @@ A/B테스트 없이 동일하게 진행되고 있는 것 같아서요.
   <h3>전체 슬라이드 보기</h3>
   <p class="hint">클릭하면 해당 슬라이드로 바로 이동합니다.</p>
   <div class="overview-grid" id="overviewGrid"></div>
+</div>
+
+<!-- ============ ANNOTATION LAYER (canvas for pen/eraser) ============ -->
+<canvas id="annoCanvas"></canvas>
+
+<!-- ============ MAGNIFIER LENS ============ -->
+<div class="lens" id="lens"><div class="lens-content" id="lensContent"></div></div>
+
+<!-- ============ ANNOTATION TOOLBAR ============ -->
+<div class="anno-toolbar" id="annoToolbar">
+  <button class="at-btn" id="toolZoom" title="돋보기 (M)">🔍</button>
+
+  <div class="at-pen-wrap">
+    <button class="at-btn" id="toolPen" title="싸인펜 (P)">🖊️</button>
+    <div class="at-colors" id="penColors">
+      <button class="at-color" data-color="#FF4757" style="background:#FF4757" title="빨강"></button>
+      <button class="at-color active" data-color="#FFD23F" style="background:#FFD23F" title="노랑"></button>
+      <button class="at-color" data-color="#3FD991" style="background:#3FD991" title="초록"></button>
+      <button class="at-color" data-color="#4C9AFF" style="background:#4C9AFF" title="파랑"></button>
+    </div>
+  </div>
+
+  <button class="at-btn" id="toolEraser" title="지우개 (E)">🧹</button>
+  <button class="at-btn" id="toolClear" title="전체 지우기">🗑️</button>
 </div>
 
 <script src="script.js"></script>
