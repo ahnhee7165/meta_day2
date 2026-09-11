@@ -280,10 +280,13 @@ function channelTableHTML(key){
   const barRows = [
     {label:"노출", v:met.impr}, {label:"클릭", v:met.clicks}, {label:"비용", v:met.cost}, {label:"구매매출", v:met.revenue}
   ];
+  const adjNote = (key==="네이버SA" && DATA.adjustments && DATA.adjustments["네이버SA"] && currentLevel==='month' && DATA.adjustments["네이버SA"]["월별_비용_보정"][currentMonth])
+    ? `<div class="note">📌 ${DATA.adjustments["네이버SA"].note} (${currentMonth} +${fmt(DATA.adjustments["네이버SA"]["월별_비용_보정"][currentMonth])}원 반영됨)</div>` : '';
   return `<div class="panel">
     <h2>${name} · ${periodLabel()}</h2>
     <p class="desc">선택한 기간의 실적입니다. 상단에서 월별/주차(변환)별/일별로 바꿀 수 있어요.</p>
     <div class="table-wrap"><table><thead><tr><th>지표</th><th>${periodLabel()}</th></tr></thead><tbody>${rowsHtml}</tbody></table></div>
+    ${adjNote}
   </div>
   <div class="panel"><h2>${name} · 지표 비교 (${periodLabel()})</h2>${barChart(barRows,"")}</div>
   ${dailySection(key)}
@@ -305,9 +308,18 @@ function dailySection(key){
       return Object.keys(DATA.days_by_week).some(k => k.startsWith(currentMonth+'|') && DATA.days_by_week[k].includes(d));
     }).sort();
   }
+  const tableRows = days.map(d=>{
+    const met = m.daily[d];
+    if(!met) return `<tr><td>${d}</td><td colspan="6" style="color:var(--muted)">데이터 없음</td></tr>`;
+    return `<tr><td>${d}</td><td class="num">${fmt(met.impr)}</td><td class="num">${fmt(met.clicks)}</td><td class="num">${fmt(met.cost)}원</td><td class="num">${fmt(met.purchase)}건</td><td class="num">${fmt(met.revenue)}원</td><td class="num">${met.roas}%</td></tr>`;
+  }).join('');
   return `<div class="panel"><h2>일별 추이 · ${periodLabel()} (광고비 vs 구매전환매출)</h2>
     <p class="desc">일 단위로 광고비와 구매전환매출의 흐름을 함께 볼 수 있습니다.</p>
     ${lineChart(days, m.daily)}
+    <div class="table-wrap" style="margin-top:16px"><table>
+      <thead><tr><th>날짜</th><th>노출</th><th>클릭</th><th>비용</th><th>구매</th><th>구매매출</th><th>ROAS</th></tr></thead>
+      <tbody>${tableRows || '<tr><td colspan="7" style="color:var(--muted)">표시할 일자가 없습니다.</td></tr>'}</tbody>
+    </table></div>
   </div>`;
 }
 
