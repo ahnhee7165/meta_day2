@@ -46,7 +46,12 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow:hidden;
+  word-break:keep-all;      /* 한글 단어 중간에서 줄바꿈되지 않도록 */
+  overflow-wrap:break-word;
 }
+/* 문단 마지막 줄에 한두 글자만 남는 것 방지, 제목 줄 길이 균형 */
+p,li,td,th,dd,.quiz-a{text-wrap:pretty;}
+h1,h2,h3,h4{text-wrap:balance;}
 h1,h2,h3,h4{font-weight:800;letter-spacing:-.02em;margin:0 0 .45em;color:var(--ink);}
 p{margin:0 0 1em;font-size:19.6px;}
 a{color:inherit;}
